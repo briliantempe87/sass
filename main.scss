@@ -1,0 +1,227 @@
+$blue-color:blue;
+$red-color:red;
+$green-color:green;
+$yellow-color:yellow;
+$grey-color: grey;
+$black-color:black;
+$font-d:Helvetica, sans-serif;
+
+body {
+    font:100% $font-d;
+    margin: 0;
+}
+.navbar {
+    background-color:$grey-color;
+    // overflow: hidden;
+    a {
+        color:$red-color;
+        float: left;
+        display: block;
+        text-align: center;
+        padding: 10px 20px;
+        text-decoration: none;
+        img {
+            height: 30px;
+            width: 190px;
+        }
+    }
+    a:hover {
+        background-color: $grey-color;
+        color: $black-color;
+        padding: 10px 20px;
+    }
+    .right {
+        float: right;
+        width: auto;
+        display: block;
+        padding: 5px;
+    }
+}
+@media screen and (max-width:800px) {
+    .navbar{
+        a{
+            float: none;
+            width: 100%;
+        }
+        .right{
+            float: none;
+            width: 100%;
+        }
+    }
+}
+.header {
+    background-image: url(images\ \(1\).jpeg);
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-bottom: 1px solid $black-color;
+    border-top: 1px solid $black-color;
+}
+.text-header{
+    text-align: center;
+    padding: 30px;
+    hr {
+        margin: auto;
+        width: 50%;
+        border-color: $grey-color;
+        margin-bottom: 10px;
+    }
+    p {
+        color: $black-color;
+        font-size: 20px;
+        margin-bottom: 50px;
+    }
+}
+@mixin judul($color,$shadow){
+    color: $color;
+    text-shadow: 1px 1px $shadow;
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.judul-header {
+    @include judul(aqua,$green-color)
+}
+.judul-produk{
+    @include judul($grey-color,$blue-color)
+}
+.button-basic {
+    border: none;
+    padding: 15px 15px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    font-family: 'Poiret one', sans-serif;
+    text-decoration: none;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    margin-top: 30px;
+}
+.button-primary {
+    @extend.button-basic;
+    background-color: $red-color;
+}
+.button-secondary {
+    @extend.button-basic;
+    background-color: aqua;
+}
+.container{
+    box-sizing: border-box;
+}
+@mixin item($value) {
+    width: $value;
+    float: left;
+    @media screen and (max-width:800px){
+        float: none;
+        width: 100%;
+    }
+}
+.item-sepertiga {
+    @include item(33%)
+}
+.item-duapertiga {
+    @include item(66% )
+}
+.about {
+    background-image: linear-gradient(to bottom right, $blue-color, $green-color);
+    min-height: 400px;
+    @media screen and(max-width:800px){
+        text-align: center;
+    }
+    img{
+        border-radius: 100%;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        -ms-border-radius: 100%;
+        -o-border-radius: 100%;
+        padding: 20px;
+        width: 300px;
+        height: 300px;
+}
+h1{
+    color: $yellow-color;
+    text-shadow: 1px 1px $grey-color;
+    font-size: 46px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+h2 {
+    color: $red-color;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+p{
+    color: $grey-color;
+    font-size: 20px;
+}
+}
+.produk {
+    background-color: $yellow-color;
+    color:$blue-color;
+}
+.img-style{
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    padding: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.produk-body{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    @media  screen and (max-width:800px) {
+        flex-direction: column;
+    }
+}
+.produk-item{
+    background-color: $grey-color;
+    color: $yellow-color;
+    box-shadow: 0 4px 8px 0 $grey-color;
+    margin: 15px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    width:340px;
+    img{
+        width: 90%;
+        @extend.img-style;
+    }
+    .produk-content {
+        padding: 20px;
+        text-align: justify;
+    }
+    .produk-footer{
+        padding: 20px;
+        margin-top: 20px;
+    }
+    @media screen and (max-width:800px){
+        width: 100%;
+    }
+
+}
+.contak {
+    background-color: $blue-color;
+    color: $yellow-color;
+    height: 100px;
+}
+.footer {
+    background-color: $green-color;
+    color: $red-color;
+    height: 75px;
+}
